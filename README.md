@@ -1,26 +1,51 @@
-# LittleLemon
-Repository for the LittleLemon project from Coursera's Back-End Developer Capstone course, from the Back-End Developer certification.
+# Meta: Back-End Developer Capstone
 
-## Endpoints
+- This is the final assignment of the Meta Backend Developer Professional Certificate on Coursera
 
-Please use the following endpoints to test this application:
+## API Endpoints testing 🔄 
 
-### Menu Items
+▷ The API app comes with a total of 4 endpoints, plus you'll find Djoser endpoints ready to use as well.
 
-Use a GET request to get a list of all the Menu Items.
-Use POST to add a new Menu item.
+- Check out all the menu items or craft a unique addition
 ```
-/restaurant/menu/
+http://127.0.0.1:8000/api/menu/items
 ```
 
-Use a GET request to get a specific Menu Item providing the ID (pk) of the object.
+| Method | Action                  | TOKEN AUTH | STATUS CODE |
+|--------|-------------------------|------------|-------------|
+| GET    | Retrieve all menu items | No         | 200         |
+| POST   | Create a menu item      | No         | 201         |
+
+- Discover, update, partially modify, or bid farewell to that special dish
 ```
-/restaurant/menu/<int:pk>
+http://127.0.0.1:8000/api/menu/items/{itemId}
 ```
 
-Make a POST request to this endpoint with 'username' and 'password' in the request Body to get an Authentication Token that you can use for endpoints that require authentication.
+| Method | Action                           | TOKEN AUTH | STATUS CODE |
+|--------|----------------------------------|------------|-------------|
+| GET    | Retrieves the menu item details  | No         | 200         |
+| PUT    | Update the menu item             | No         | 200         |
+| PATCH  | Partially update the menu item   | No         | 200         |
+| DELETE | Delete the menu item             | No         | 200         |
+
+- Explore, update, partially adjust, or remove that special table
 ```
-/restaurant/api-token-auth
+http://127.0.0.1:8000/api/booking/tables
 ```
 
-To access Djoser's endpoints, please use ```/auth/``` as prefix (i.e. ```/auth/users/me```).
+| Method | Action                 | TOKEN AUTH | STATUS CODE |
+|--------|------------------------|------------|-------------|
+| GET    | Retrieve all bookings  | Yes        | 200         |
+| POST   | Create a booking       | Yes        | 201         |
+
+- Check it out, update, partially modify, or bid farewell to that one special table
+```
+http://127.0.0.1:8000/api/booking/tables/{bookingId}
+```
+
+| Method | Action                        | TOKEN AUTH | STATUS CODE |
+|--------|-------------------------------|------------|-------------|
+| GET    | Retrieve the booking details  | Yes        | 200         |
+| PUT    | Update the booking            | Yes        | 200         |
+| PATCH  | Partially update the booking  | Yes        | 200         |
+| DELETE | Delete the booking            | Yes        | 200         |
